@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<meta name="description" content="What are credit card rewards, actually? Cash back, points, and how transferring points to travel partners can turn the same business spending into a free week in St. Lucia." />
+<link rel="icon" href="data:," />
+<title>What Are Rewards, Actually? — The Card Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg: #f1f2eb;
+    --bg-soft: #e9ebe1;
+    --ink: #141815;
+    --ink-2: #2e3530;
+    --muted: #5c665e;
+    --muted-2: #7a857c;
+    --line: #d9dbd0;
+    --line-soft: #e3e5da;
+    --green: #0f6b33;
+    --green-dark: #0a4a24;
+    --green-hover: #0c5a2c;
+    --green-pale: #dde8d3;
+    --green-pale-2: #e6efe0;
+    --cream: #f7eed3;
+    --card: #ffffff;
+    --radius: 14px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink-2);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a{ color: var(--green); }
+
+  /* ---------- Header / nav (matches thecardaudit.com) ---------- */
+  .site-header{
+    position: sticky;
+    top:0;
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 62px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand{
+    text-decoration:none;
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    display:inline-flex;
+    align-items:center;
+    min-height: 44px;
+  }
+  .brand .audit{ color: var(--green); margin-left: 4px; }
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .main-nav a{
+    text-decoration:none;
+    color: #3a403c;
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 10px 14px;
+    min-height: 40px;
+    display:inline-flex;
+    align-items:center;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .main-nav a:hover{ color: var(--ink); }
+  .main-nav a.active{
+    background: var(--green);
+    color: #fff;
+  }
+  .main-nav a.active:hover{ background: var(--green-hover); color:#fff; }
+
+  /* ---------- Article ---------- */
+  .article-wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 24px 0;
+  }
+  article{
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .kicker{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin: 0 0 18px;
+  }
+  h1{
+    font-size: 52px;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 900;
+    color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .meta{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 14px;
+  }
+  .read-pill{
+    display:inline-flex;
+    align-items:center;
+    gap: 7px;
+    background: var(--green-pale);
+    color: var(--green-dark);
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 7px 13px;
+    border-radius: 999px;
+  }
+  .read-pill svg{ flex: none; }
+  .meta-note{
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .title-rule{
+    border:0;
+    border-top: 1px solid var(--line);
+    margin: 28px 0 8px;
+  }
+
+  .prose p{
+    font-size: 18px;
+    line-height: 1.78;
+    margin: 0 0 26px;
+    color: var(--ink-2);
+  }
+  .prose p.lede{
+    font-size: 19.5px;
+    line-height: 1.72;
+    color: #232a25;
+  }
+  .prose p.key-line{
+    font-size: 20px;
+    line-height: 1.65;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .prose h2{
+    font-size: 29px;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 52px 0 18px;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background: var(--green-dark);
+    border-radius: 16px;
+    padding: 38px 36px;
+    margin: 56px 0 0;
+    color: #eaf2e6;
+  }
+  .cta h2{
+    color:#fff;
+    font-size: 30px;
+    line-height:1.15;
+    letter-spacing:-0.025em;
+    font-weight: 800;
+    margin: 0 0 12px;
+  }
+  .cta p{
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #cfe0c8;
+    margin: 0 0 24px;
+    max-width: 560px;
+  }
+  .cta-actions{ display:flex; gap: 12px; flex-wrap: wrap; }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-size: 15.5px;
+    font-weight: 700;
+    text-decoration:none;
+  }
+  .btn-white{ background:#fff; color: var(--green-dark); }
+  .btn-white:hover{ background: var(--green-pale-2); }
+  .btn-outline{ background: transparent; color:#fff; border: 1.5px solid rgba(255,255,255,.55); }
+  .btn-outline:hover{ border-color:#fff; }
+  .cta .guarantee{
+    margin: 20px 0 0;
+    font-size: 13.5px;
+    color: #a9c4a2;
+  }
+  .cta .guarantee strong{ color:#fff; }
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    border-top: 1px solid var(--line);
+    margin-top: 64px;
+  }
+  .footer-inner{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 24px 40px;
+    display:flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .footer-inner .f-brand{ color: var(--ink); font-weight: 700; }
+  .footer-links{ display:flex; gap: 8px; flex-wrap: wrap; align-items:center; }
+  .footer-links a{ color: var(--muted); text-decoration: underline; text-underline-offset: 3px; padding: 6px 2px; display:inline-flex; align-items:center; min-height: 36px; }
+  .footer-links a:hover{ color: var(--green); }
+  .footer-links .sep{ color: var(--line); }
+
+  @media (max-width: 640px){
+    .header-inner{ padding: 0 16px; min-height: 58px; }
+    .brand{ font-size: 16px; }
+    .main-nav{ gap: 2px; }
+    .main-nav a{ font-size: 13.5px; padding: 9px 10px; }
+    .article-wrap{ padding: 38px 18px 0; }
+    h1{ font-size: 38px; }
+    .prose p{ font-size: 17px; }
+    .prose p.lede{ font-size: 18px; }
+    .prose p.key-line{ font-size: 18.5px; }
+    .prose h2{ font-size: 25px; margin-top: 44px; }
+    .cta{ padding: 30px 22px; }
+    .cta h2{ font-size: 26px; }
+    .cta-actions .btn{ flex: 1 1 100%; }
+    .footer-inner{ padding: 24px 18px 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="https://thecardaudit.com/">The Card<span class="audit">Audit</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="https://thecardaudit.com/">Home</a>
+      <a href="#" class="active" aria-current="page">What Are Rewards?</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <article>
+    <p class="kicker">The Card Audit &middot; Guide</p>
+    <h1>What Are Rewards, Actually?</h1>
+    <div class="meta">
+      <span class="read-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        3-minute read
+      </span>
+      <span class="meta-note">Cash back, points, and travel &mdash; in plain English.</span>
+    </div>
+    <hr class="title-rule" />
+
+    <div class="prose">
+      <p class="lede">Look, most business owners I talk to have the same setup: one card, everything goes on it, and at the end of the year they get a little statement credit and call it good. That&rsquo;s fine. It&rsquo;s just leaving money on the table, and once you see how it works, it&rsquo;s hard to unsee.</p>
+
+      <p class="key-line">Here&rsquo;s the whole idea in one sentence: the credit card companies will pay you to spend money you&rsquo;re already spending. That&rsquo;s it. That&rsquo;s the game.</p>
+
+      <h2>Cash back is the simple one</h2>
+
+      <p>You spend a dollar, the card gives you back a penny or two. A flat-rate card on $10,000 a month is $200 back, every month, $2,400 a year, for doing nothing different. The catch is the flat cards treat every dollar the same. Category cards don&rsquo;t. Gas, ads, restaurants, phone bills &mdash; the right card pays several times more on those, and that&rsquo;s where the real money is. You&rsquo;re not spending more. You&rsquo;re just using a different piece of plastic for the gas than you use for the software subscription.</p>
+
+      <h2>Points are the same thing, with an upgrade</h2>
+
+      <p>Points and miles are just cash back wearing a nicer outfit. One point is usually worth a penny if you cash it out. Boring, but safe. The fun part is you don&rsquo;t have to cash it out. You can move those points to an airline or a hotel, and suddenly that penny is worth two or three cents. Same points, same spending, worth double or triple &mdash; if you use them for travel.</p>
+
+      <p>That&rsquo;s not a trick. The airlines and hotels want your points, so they give you a better deal for them than cash does. It&rsquo;s the one part of this whole thing that actually feels like cheating, and it&rsquo;s completely above board.</p>
+
+      <h2>A real example</h2>
+
+      <p>Say you run a small business and you put $8,000 a month through your cards. On a flat-rate card, that&rsquo;s $960 a year back. Now say you split it up &mdash; the right card for fuel, the right card for ads, the right one for travel &mdash; and you use the right card for each category instead. That&rsquo;s $2,880 a year. Same spending, $1,920 more, just from sorting it.</p>
+
+      <p>Now take those points and use them for travel instead of cash. That $2,880 is 288,000 points. Move them to Hyatt and they cover 7 nights at Secrets in St. Lucia for 180,000 points &mdash; all-inclusive, room, food, and drinks. That still leaves you 108,000 points to put toward flights.</p>
+
+      <p>Nobody&rsquo;s getting rich off this. But a free week at an all-inclusive in St. Lucia, plus points left over for the flights to get there, for spending you were going to do anyway? That&rsquo;s real money.</p>
+
+      <p>That&rsquo;s really all there is to it. You&rsquo;re already spending the money. The only question is whether the card you&rsquo;re using is paying you back for it.</p>
+    </div>
+
+    <section class="cta" aria-label="Run the calculator or start your audit">
+      <h2>See what your spending is worth</h2>
+      <p>Run the free calculator on the homepage to see what your own spending could be earning &mdash; cash back first, then what the same points could be worth in travel. Or start your audit and get the full card-by-card plan in writing.</p>
+      <div class="cta-actions">
+        <a class="btn btn-white" href="https://thecardaudit.com/">Run the calculator</a>
+        <a class="btn btn-outline" href="https://thecardaudit.com/">Start your audit</a>
+      </div>
+      <p class="guarantee">Flat $400. <strong>If the audit doesn&rsquo;t find at least $800/yr in extra rewards, it&rsquo;s free.</strong></p>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><span class="f-brand">The Card Audit</span> &middot; Business credit card audits &middot; <a href="mailto:thecardaudit@gmail.com" style="color:var(--muted);">thecardaudit@gmail.com</a></div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://thecardaudit.com/">Home</a><span class="sep">&middot;</span>
+      <a href="#" aria-current="page">What Are Rewards?</a><span class="sep">&middot;</span>
+      <a href="https://thecardaudit.com/">Start your audit</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
